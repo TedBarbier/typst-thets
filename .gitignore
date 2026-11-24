@@ -1,0 +1,5 @@
+*.pdf
+!Figures/*.pdf
+.pkg/
+out/
+.typst-cache/
