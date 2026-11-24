@@ -86,6 +86,24 @@ livrée avec Typst.
 Lors de l'impression du PDF, régler l'option **Mise à l'échelle** sur
 **Aucune**, faute de quoi les marges ne sont pas respectées.
 
+## Développement
+
+Les tests utilisent [tytanic](https://github.com/typst-community/tytanic) :
+
+```bash
+tt run                 # lance tous les tests
+tt update visual/floats  # régénère une référence après un changement voulu
+```
+
+- `tests/api/` : tests unitaires (types de document, langues, traductions, dates) ;
+- `tests/visual/` : rendus comparés à des images de référence (page de titre,
+  jury, flottants). Seules les polices embarquées sont utilisées, pour un rendu
+  identique partout ;
+- `@template` : vérifie que le projet créé par `typst init` compile.
+
+La CI GitLab lance aussi `typstyle --check`, la compilation des deux modèles et
+`typst-package-check`.
+
 ## Crédits
 
 La mise en page, les textes de la page de titre et les valeurs par défaut

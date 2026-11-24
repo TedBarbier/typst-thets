@@ -3,3 +3,5 @@
 .pkg/
 out/
 .typst-cache/
+tests/**/out/
+tests/**/diff/

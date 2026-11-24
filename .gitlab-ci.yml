@@ -1,6 +1,7 @@
 # CI du paquet Typst `boreal-thesis-ets`.
 # - format  : le code Typst respecte typstyle
 # - compile : les deux modèles compilent avec la version minimale et la dernière version de Typst
+# - tests   : tests tytanic (API, rendu de référence, modèle de `typst init`)
 # - package : vérifications officielles de Typst Universe (typst/package-check)
 # - version : sur un tag vX.Y.Z, la version de typst.toml et des imports correspond
 
@@ -9,6 +10,7 @@ stages: [check, release]
 variables:
   TYPST_VERSION: "0.15.1"
   TYPSTYLE_VERSION: "v0.15.3"
+  TYTANIC_VERSION: "v0.4.1"
 
 format:
   stage: check
@@ -17,7 +19,7 @@ format:
     - apk add --no-cache curl
     - curl -fsSL -o /usr/local/bin/typstyle "https://github.com/typstyle-rs/typstyle/releases/download/${TYPSTYLE_VERSION}/typstyle-x86_64-unknown-linux-musl"
     - chmod +x /usr/local/bin/typstyle
-    - typstyle --check src template
+    - typstyle --check src template tests
 
 .compile:
   stage: check
@@ -51,6 +53,20 @@ compile-min:
     IMAGE_TAG: "0.15.0" # version minimale déclarée dans typst.toml (compiler)
     TYPST_PACKAGE_CACHE_PATH: "$CI_PROJECT_DIR/.typst-cache"
   artifacts: null
+
+tests:
+  stage: check
+  image: alpine:3.22
+  script:
+    - apk add --no-cache curl xz
+    - curl -fsSL "https://github.com/typst-community/tytanic/releases/download/${TYTANIC_VERSION}/tytanic-x86_64-unknown-linux-musl.tar.xz" | tar -xJ -C /tmp
+    - install "$(find /tmp -type f -name tt | head -1)" /usr/local/bin/tt
+    # Polices embarquées seulement (défaut) : rendu identique en local et en CI.
+    - tt run --no-fail-fast --warnings ignore
+  artifacts:
+    when: on_failure
+    paths: [tests/**/out/, tests/**/diff/]
+    expire_in: 1 week
 
 package:
   stage: check
