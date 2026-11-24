@@ -62,7 +62,8 @@ package:
     # package-check ne télécharge rien : on lui fournit datify depuis le cache du job compile.
     - mkdir -p /.cache/typst
     - mv .typst-cache /.cache/typst/packages
-    - rm -rf out
+    # Vérifie le paquet tel qu'il sera publié, sans .git ni artefacts de CI.
+    - rm -rf out .git
     - typst-package-check check
 
 version:
