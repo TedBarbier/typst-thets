@@ -1,11 +1,11 @@
 # boreal-thesis-ets — gabarit Typst ÉTS (non officiel)
 
-[![Pipeline](https://gitlab.com/TedBarbier/typst-thets/badges/main/pipeline.svg)](https://gitlab.com/TedBarbier/typst-thets/-/pipelines)
-[![Version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fgitlab.com%2FTedBarbier%2Ftypst-thets%2F-%2Fraw%2Fmain%2Ftypst.toml&query=%24.package.version&prefix=v&label=version&color=239dad)](https://gitlab.com/TedBarbier/typst-thets/-/tags)
-[![Typst Universe](https://img.shields.io/badge/Typst_Universe-boreal--thesis--ets-239dad)](https://typst.app/universe/package/boreal-thesis-ets)
-[![Typst](https://img.shields.io/badge/Typst-%E2%89%A50.15-239dad?logo=typst&logoColor=white)](https://typst.app)
-[![Licence](https://img.shields.io/badge/licence-MIT--0-blue)](LICENSE)
-[![Miroir GitHub](https://img.shields.io/badge/miroir-GitHub-181717?logo=github)](https://github.com/TedBarbier/typst-thets)
+[![État du pipeline GitLab](https://gitlab.com/TedBarbier/typst-thets/badges/main/pipeline.svg)](https://gitlab.com/TedBarbier/typst-thets/-/pipelines)
+[![Version actuelle du paquet](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fgitlab.com%2FTedBarbier%2Ftypst-thets%2F-%2Fraw%2Fmain%2Ftypst.toml&query=%24.package.version&prefix=v&label=version&color=239dad)](https://gitlab.com/TedBarbier/typst-thets/-/tags)
+[![Paquet disponible sur Typst Universe](https://img.shields.io/badge/Typst_Universe-boreal--thesis--ets-239dad)](https://typst.app/universe/package/boreal-thesis-ets)
+[![Nécessite Typst 0.15 ou plus récent](https://img.shields.io/badge/Typst-%E2%89%A50.15-239dad?logo=typst&logoColor=white)](https://typst.app)
+[![Licence MIT-0](https://img.shields.io/badge/licence-MIT--0-blue)](LICENSE)
+[![Miroir du dépôt sur GitHub](https://img.shields.io/badge/miroir-GitHub-181717?logo=github)](https://github.com/TedBarbier/typst-thets)
 
 Portage en [Typst](https://typst.app) du gabarit LaTeX `thETS` de rédaction de
 thèse, de mémoire et de rapport de projet de l'École de technologie supérieure
