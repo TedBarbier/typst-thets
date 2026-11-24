@@ -1,7 +1,7 @@
 # Gabarit Typst ÉTS — Guide d'utilisation
 
 Ce guide explique comment rédiger une thèse, un mémoire ou un rapport de projet
-de l'École de technologie supérieure avec le gabarit Typst `thets`. Il suit le
+de l'École de technologie supérieure avec le gabarit Typst `boreal-thesis-ets`. Il suit le
 même plan que le `GUIDE_FR.md` du gabarit LaTeX d'origine, de sorte qu'on peut
 passer de l'un à l'autre section par section.
 
@@ -35,7 +35,7 @@ Tout document commence par l'importation du gabarit et par une règle `show` qui
 applique la mise en page :
 
 ```typ
-#import "@preview/thets:0.1.0": *
+#import "@preview/boreal-thesis-ets:0.1.0": *
 
 #show: ets-document.with(
   type: "these",

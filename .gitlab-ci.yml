@@ -1,4 +1,4 @@
-# CI du paquet Typst `thets`.
+# CI du paquet Typst `boreal-thesis-ets`.
 # - format  : le code Typst respecte typstyle
 # - compile : les deux modèles compilent avec la version minimale et la dernière version de Typst
 # - package : vérifications officielles de Typst Universe (typst/package-check)
@@ -27,10 +27,10 @@ format:
   variables:
     TYPST_PACKAGE_CACHE_PATH: "$CI_PROJECT_DIR/.typst-cache"
   script:
-    # Rend le dépôt disponible sous @preview/thets:<version> sans passer par Universe.
+    # Rend le dépôt disponible sous @preview/boreal-thesis-ets:<version> sans passer par Universe.
     - VERSION=$(sed -n 's/^version = "\(.*\)"/\1/p' typst.toml)
-    - mkdir -p "/tmp/pkg/preview/thets/$VERSION"
-    - cp -r src template ets.csl Figures typst.toml "/tmp/pkg/preview/thets/$VERSION/"
+    - mkdir -p "/tmp/pkg/preview/boreal-thesis-ets/$VERSION"
+    - cp -r src template ets.csl Figures typst.toml "/tmp/pkg/preview/boreal-thesis-ets/$VERSION/"
     - mkdir -p out
     - cd template
     - typst compile --package-path /tmp/pkg rapport.typ ../out/rapport.pdf
@@ -74,4 +74,4 @@ version:
   script:
     - VERSION=$(sed -n 's/^version = "\(.*\)"/\1/p' typst.toml)
     - test "v$VERSION" = "$CI_COMMIT_TAG" || { echo "typst.toml ($VERSION) != tag ($CI_COMMIT_TAG)"; exit 1; }
-    - "! grep -rn '@preview/thets:' template README.md GUIDE.md | grep -v \"thets:$VERSION\""
+    - "! grep -rn '@preview/boreal-thesis-ets:' template README.md GUIDE.md | grep -v \"boreal-thesis-ets:$VERSION\""

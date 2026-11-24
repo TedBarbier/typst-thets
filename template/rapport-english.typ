@@ -6,7 +6,7 @@
 // Watch:   typst watch rapport-english.typ
 // ============================================================
 
-#import "@preview/thets:0.1.0": *
+#import "@preview/boreal-thesis-ets:0.1.0": *
 
 #show: ets-document.with(
   // thesis | manuscriptbasedthesis | masterdegreethesis

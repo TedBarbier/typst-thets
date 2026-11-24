@@ -1,8 +1,11 @@
-# thets — gabarit Typst ÉTS (non officiel)
+# boreal-thesis-ets — gabarit Typst ÉTS (non officiel)
 
 Portage en [Typst](https://typst.app) du gabarit LaTeX `thETS` de rédaction de
 thèse, de mémoire et de rapport de projet de l'École de technologie supérieure
 (ÉTS, Montréal).
+
+« boreal » n'est là que pour respecter les règles de nommage de Typst Universe :
+les noms tels que `ets` ou `thets` sont réservés aux gabarits officiels.
 
 > **⚠️ Gabarit non officiel.** Il n'est ni produit, ni validé, ni soutenu par
 > l'ÉTS. Il reproduit au mieux la mise en page du gabarit LaTeX officiel, mais
@@ -20,13 +23,13 @@ recto-verso, corps de 12 pt, interligne 1,5, marges 3,81 cm / 3,81 cm / 1,90 cm
 Avec Typst 0.15 ou plus récent :
 
 ```bash
-typst init @preview/thets:0.1.0 mon-rapport
+typst init @preview/boreal-thesis-ets:0.1.0 mon-rapport
 cd mon-rapport
 typst watch rapport.typ
 ```
 
 Sur [typst.app](https://typst.app), choisir « Start from template » et chercher
-`thets`.
+`boreal-thesis-ets`.
 
 Le dossier créé contient `rapport.typ` (modèle en français), `rapport-english.typ`
 (modèle en anglais), des exemples de bibliographie et une figure. Les valeurs de
@@ -37,7 +40,7 @@ LaTeX : il suffit de les remplacer.
 Pour utiliser le gabarit dans un document existant :
 
 ```typ
-#import "@preview/thets:0.1.0": *
+#import "@preview/boreal-thesis-ets:0.1.0": *
 
 #show: ets-document.with(
   type: "rapportprojet",
